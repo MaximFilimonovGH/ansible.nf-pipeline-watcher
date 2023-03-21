@@ -8,4 +8,4 @@ nextflow_version: 20.11.0-edge
 
 # go_version: 1.17.8
 
-# docker_version: 5:20.10.14~3-0~ubuntu-focal
+docker_version: 5:20.10.14~3-0~ubuntu-focal
