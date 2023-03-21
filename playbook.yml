@@ -1,0 +1,6 @@
+---
+- hosts: localhost 
+  connection: local
+  roles:
+    - nf-pipeline-watcher
+  tags: nf-pipeline-watcher

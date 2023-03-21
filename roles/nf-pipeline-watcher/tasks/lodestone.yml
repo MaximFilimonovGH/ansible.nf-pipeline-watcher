@@ -1,0 +1,30 @@
+---
+- name: lodestone | clone the lodestone repository
+  git:
+    repo: https://github.com/Pathogen-Genomics-Cymru/tb-pipeline.git
+    version: cardiff-testing
+    dest: "{{ home }}/lodestone"
+
+- name: lodestone | create kraken2 directory
+  file:
+    path: "{{ home }}/lodestone/kraken2"
+    state: directory
+    mode: 0775
+
+- name: lodestone | create bowtie2 directory
+  file:
+    path: "{{ home }}/lodestone/bowtie2"
+    state: directory
+    mode: 0775
+
+- name: lodestone | download and unarchive kraken2
+  unarchive:
+    src: https://genome-idx.s3.amazonaws.com/kraken/k2_pluspf_16gb_20220908.tar.gz
+    dest: "{{ home }}/lodestone/kraken2"
+    remote_src: yes
+
+- name: lodestone | download and unarchive bowtie2
+  unarchive:
+    src: ftp://ftp.ccb.jhu.edu/pub/data/bowtie2_indexes/hg19_1kgmaj_bt2.zip
+    dest: "{{ home }}/lodestone/bowtie2"
+    remote_src: yes
