@@ -56,7 +56,6 @@ This workflow tests the ansible playbook by running it on a GitHub Actions hoste
 ```
 runs-on: ubuntu-20.04
 ```
-https://github.com/annacprice/ansible.nf-pipeline-watcher/blob/23e7deb0283a5c394821cc84e568118695d7d7f7/.github/workflows/main.yml#L13
 
 This can be changed to another Ubuntu environment e.g. `ubuntu-18.04` (note that if you do this, you'll have to update the Docker version to match the OS
 and that this playbook can only run on Ubuntu servers). 
