@@ -44,8 +44,10 @@
 - name: watcher | force systemd to reread configs
   ansible.builtin.systemd:
     daemon_reload: true
+  become: yes
 
 - name: watcher | start service
   ansible.builtin.systemd:
     state: started
     name: watcher.service
+  become: yes
