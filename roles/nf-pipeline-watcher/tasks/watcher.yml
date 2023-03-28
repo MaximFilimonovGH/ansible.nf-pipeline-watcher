@@ -1,0 +1,30 @@
+---
+- name: watcher | clone the watcher repository
+  git:
+    repo: https://github.com/MaximFilimonovGH/nf-pipeline-watcher.git
+    version: main
+    dest: "{{ home }}/watcher"
+
+- name: watcher | install PyYAML dependency
+  ansible.builtin.pip:
+    name: PyYAML
+  
+# - name: watcher | setup configuration template
+#   template:
+#     src: /templates/watcher_config.yaml.j2
+#     dest: "{{ home }}/watcher/config.yaml"
+
+# - name: watcher | setup service template
+#   template:
+#     src: /templates/watcher_service.j2
+#     dest: "{{ home }}/watcher/watcher.service"
+
+# - name: watcher | move service file to systemctl directory
+#   command: "mv {{ home }}/watcher/watcher.service /etc/systemd/system/"
+#   become: yes
+
+# - name: watcher | daemon-reload services
+#   command: systemctl daemon-reload
+
+# - name: watcher | start service
+#   command: systemctl start watcher.service
