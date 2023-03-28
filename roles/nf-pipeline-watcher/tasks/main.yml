@@ -16,8 +16,8 @@
       state: latest
   become: true
 
-- name: install nextflow
-  include_tasks: nextflow.yml
+# - name: install nextflow
+#   include_tasks: nextflow.yml
 
 # - name: install docker
 #   include_tasks: docker.yml

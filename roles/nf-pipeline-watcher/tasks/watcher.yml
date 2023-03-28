@@ -11,12 +11,12 @@
   
 - name: watcher | setup configuration template
   template:
-    src: /templates/watcher_config.yaml.j2
+    src: watcher_config.yaml.j2
     dest: "{{ home }}/watcher/config.yaml"
 
 - name: watcher | setup service template
   template:
-    src: /templates/watcher_service.j2
+    src: watcher_service.j2
     dest: "{{ home }}/watcher/watcher.service"
 
 - name: watcher | get config contents
