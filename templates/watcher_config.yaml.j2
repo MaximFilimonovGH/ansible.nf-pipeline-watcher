@@ -7,10 +7,9 @@ poll_time: 30
 pipelines:
   - name: 'lodestone'
     prefix: 'lodestone'
-    run_command: 'https://github.com/Pathogen-Genomics-Cymru/lodestone'
+    run_command: 'https://github.com/Pathogen-Genomics-Cymru/lodestone.git -r main'
     config: null
     profile: 'docker'
-    version: '20.11.0-edge'
     input_type: 'directory'
     input_parameter: 'input_dir'
     output_parameter: 'output_dir'
@@ -22,6 +21,8 @@ pipelines:
       - kraken_db: 'kraken'
       - bowtie2_index: 'bowtie2_index'
       - bowtie_index_name: 'bowtie_index_name'
+      - afanc_myco_db: 'afanc_db'
+      - pattern: '*_R{1,2}.fastq.gz'
   - name: 'nf-core/scrnaseq'
     prefix: 'scrnaseq'
     run_command: 'nf-core/scrnaseq'

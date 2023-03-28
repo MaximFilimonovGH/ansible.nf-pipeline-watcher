@@ -19,11 +19,11 @@
 - name: install nextflow
   include_tasks: nextflow.yml
 
-# - name: install docker
-#   include_tasks: docker.yml
+- name: install docker
+  include_tasks: docker.yml
 
-# - name: install singularity
-#   include_tasks: singularity.yml
+- name: install singularity
+  include_tasks: singularity.yml
 
 - name: setup watcher script
   include_tasks: watcher.yml
