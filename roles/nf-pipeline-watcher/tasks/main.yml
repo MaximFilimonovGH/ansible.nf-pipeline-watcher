@@ -22,8 +22,8 @@
 - name: install docker
   include_tasks: docker.yml
 
-# - name: install singularity
-#   include_tasks: singularity.yml
+- name: install singularity
+  include_tasks: singularity.yml
 
 # - name: setup lodestone
 #   include_tasks: lodestone.yml
