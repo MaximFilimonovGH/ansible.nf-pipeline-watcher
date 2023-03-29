@@ -1,15 +1,12 @@
 # ansible.nf-pipeline-watcher
 
-This playbook setups the Nextflow Watcher script.
-
-Full description of the Watcher script can be found [here](https://github.com/MaximFilimonovGH/nf-pipeline-watcher).
+This playbook setups the Nextflow Watcher script (https://github.com/MaximFilimonovGH/nf-pipeline-watcher).
 
 The playbook also installs the following dependencies for running the Nextflow pipelines:
-
-Nextflow 20.11.0-edge
-Docker 5:20.10.14~3-0~ubuntu-focal
-Go 1.17.8
-Singularity v3.9.7
+* [Nextflow](https://www.nextflow.io) 20.11.0-edge
+* [Docker](https://www.docker.com) 5:20.10.14\~3-0~ubuntu-focal
+* [Go](https://go.dev) 1.17.8
+* [Singularity](https://sylabs.io/singularity) v3.9.7
 
 It is designed to run on a clean Ubuntu 20.04 server (i.e. a server on which nextflow etc. have not yet been installed).
 
