@@ -1,6 +1,6 @@
 # ansible.nf-pipeline-watcher
 
-This playbook setups the Nextflow Watcher script (https://github.com/MaximFilimonovGH/nf-pipeline-watcher).
+This playbook setups the Nextflow Watcher script (https://github.com/Pathogen-Genomics-Cymru/nf-pipeline-watcher).
 
 The playbook also installs the following dependencies for running the Nextflow pipelines:
 * [Nextflow](https://www.nextflow.io) 20.11.0-edge
@@ -45,6 +45,12 @@ sudo systemctl stop watcher.service
 sudo systemctl daemon-reload
 sudo systemctl start watcher.service
 ```
+
+## Updating Watcher service configuration
+
+You can use Nextflow Tower to monitor pipelines execution.To do so supply Nextlow Tower Access Token in `watcher.service` file and Nextflow Tower address in `config.yaml` file.
+
+Refer to Watcher script repository for more detail.
 
 ## Updating software versions
 The versions for the installed software are found in `ansible.nf-pipeline-watcher/roles/nf-pipeline-watcher/defaults/main.yml`. 

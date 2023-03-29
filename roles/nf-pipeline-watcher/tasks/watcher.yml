@@ -1,7 +1,7 @@
 ---
 - name: watcher | clone the watcher repository
   git:
-    repo: https://github.com/MaximFilimonovGH/nf-pipeline-watcher.git
+    repo: https://github.com/Pathogen-Genomics-Cymru/nf-pipeline-watcher.git
     version: main
     dest: "{{ home }}/watcher"
 
