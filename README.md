@@ -1,6 +1,10 @@
 # ansible.nf-pipeline-watcher
 
-This playbook setups the Nextflow Watcher script (`link`) and installs the following dependencies for running the pipeline:
+This playbook setups the Nextflow Watcher script.
+
+Full description of the Watcher script can be found [here](https://github.com/MaximFilimonovGH/nf-pipeline-watcher).
+
+The playbook also installs the following dependencies for running the Nextflow pipelines:
 
 Nextflow 20.11.0-edge
 Docker 5:20.10.14~3-0~ubuntu-focal
@@ -33,15 +37,27 @@ cd ansible.nf-pipeline-watcher
 ansible-playbook playbook.yml
 ```
 
+## Updating Watcher script configuration
+
+You can change configuration of the Watcher script pipeline in `config.yaml` file in `watcher` directory.
+
+After changes are made use the following commands to restart the service:
+
+```
+sudo systemctl stop watcher.service
+sudo systemctl daemon-reload
+sudo systemctl start watcher.service
+```
+
 ## Updating software versions
 The versions for the installed software are found in `ansible.nf-pipeline-watcher/roles/nf-pipeline-watcher/defaults/main.yml`. 
 These can be updated. When updates are made to the playbook, a new GitHub Actions run is triggered.
 
-To check for the latest versions of Nextflow look [here](https://github.com/nextflow-io/nextflow/releases)
+To check for the latest versions of Nextflow look [here](https://github.com/nextflow-io/nextflow/releases).
 
 Versions of Singularity can be found [here](https://github.com/sylabs/singularity/releases). 
 The release notes should suggest which version of Go to use.
-Note that Singularity is end of life and will be replaced with [Apptainer](https://github.com/apptainer/apptainer)
+Note that Singularity is end of life and will be replaced with [Apptainer](https://github.com/apptainer/apptainer).
 
 A list of the latest versions of Docker can be found [here](https://docs.docker.com/engine/release-notes/). 
 To update the version in the ansible you'll have to use the following format `5:VERSION-NO-HERE~3-0~ubuntu-focal`
